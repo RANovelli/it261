@@ -6,13 +6,9 @@
     box-sizing: border-box;
 }
 
-body {
-    background: beige;
-}
-
 header {
     overflow: hidden;
-    background: yellow;
+    background: #f2f28d;
 }
 
 .header-inner {
@@ -23,11 +19,11 @@ header {
 #logo {
     float: left;
     width: 150px;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
 }
 
 nav {
-    height: 50px;
+    /* height: 50px; */
     float: right;
 }
 
@@ -43,6 +39,12 @@ nav li {
 
 nav a {
     text-decoration: none;
+    color: black;
+}
+
+.current {
+    color: red;
+    font-weight: bold;
 }
 
 #wrapper {
@@ -51,7 +53,6 @@ nav a {
 }
 
 #hero {
-    height: 300px;
     margin-bottom: 20px;
     background: red;
 }
@@ -59,32 +60,101 @@ nav a {
 /* values based on 940px grid, 580 divided by 940 */
 main {
     width: 61.70%;
-    height: 400px;
-    background: lightblue;
     float: left;
     margin-bottom: 20px;
 }
 
 aside {
     width: 36.17%;
-    height: 300px;
     float: right;
-    background: lightcoral;
+    margin-bottom: 20px;
 }
 
 footer {
-    height: 50px;
-    line-height: 50px;
-    border-top: 1px dotted #333;
-    clear: both;
-}
-
-footer ul {
-    float: right;
+  height: 50px;
+  line-height: 50px;
+  clear: both;
+  text-align: center;
 }
 
 footer li {
-    float: left;
+  list-style-type: none;
+  margin-left: 20px;
+  display: inline;
+}
+
+footer a {
+  text-decoration: none;
+  color: black;
+  transition: ease-in-out .2s;
+}
+
+footer a:hover {
+  color: red;  
+}
+
+/*------------------------- DAILY ------------------------*/
+.daily .headline {
+    padding-bottom: 15px;
+}
+.daily .record {
+    padding-bottom: 15px;
+}
+
+.daily .content {
+    padding-bottom: 50px;
+}
+
+.daily ul a {
+    text-decoration: none;
+    transition: ease-in-out .2s;
+}
+
+.daily ul a:hover {
+    text-decoration: none;
+    color: red;
+}
+
+.daily main ul a {
+    text-decoration: none;
+    color: black;
+}
+
+.daily li {
     list-style-type: none;
-    margin-left: 20px;
+}
+
+/* Mon */
+.olive {
+    background: olive;
+}
+
+/* Tues */
+.sienna {
+    background: sienna;
+}
+
+/* Wed */
+.pink {
+    background: pink;
+}
+
+/* Thurs */
+.orange {
+    background: orange;
+}
+
+/* Fri */
+.mediumpurple {
+    background: mediumpurple;
+}
+
+/* Sat */
+.lightblue {
+    background: lightblue;
+}
+
+/* Sun */
+.lightgreen {
+    background: lightgreen;
 }

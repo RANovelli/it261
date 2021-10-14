@@ -21,7 +21,7 @@
         <nav>
             <ul>
                 <li><a href="index.php">Home</a></li>
-                <li><a href="">Switch</a></li>
+                <li><a href="./website/daily.php">Switch</a></li>
                 <li><a href="">Troubleshoot</a></li>
                 <li><a href="">Calculator</a></li>
                 <li><a href="">Email</a></li>
@@ -47,19 +47,23 @@
                 <h2>Weekly Exercises</h2>
                 <h3>Week 1:</h3>
                 <ul>
-                    <li><a href="website/index.html">website</a></li>
+                    <li><a href="website/index.php">Website</a></li>
                 </ul>
                 <h3>Week 2:</h3>
                 <ul>
-                    <li><a href="weeks/week2/currency-logic.php">currency-logic</a></li>
-                    <li><a href="weeks/week2/currency.php">currency</a></li>
-                    <li><a href="weeks/week2/heredoc.php">heredoc</a></li>
-                    <li><a href="weeks/week2/var.php">var</a></li>
-                    <li><a href="weeks/week2/var2.php">var 2</a></li>
+                    <li><a href="weeks/week2/currency-logic.php">Currency-Logic</a></li>
+                    <li><a href="weeks/week2/currency.php">Currency</a></li>
+                    <li><a href="weeks/week2/heredoc.php">Heredoc</a></li>
+                    <li><a href="weeks/week2/var.php">Var</a></li>
+                    <li><a href="weeks/week2/var2.php">Var 2</a></li>
                 </ul>
                 <h3>Week 3:</h3>
                 <ul>
-                    <li>TBA</li>
+                    <li><a href="weeks/week3/date.php">Date Function</a></li>
+                    <li><a href="weeks/week3/foreach.php">For Each Loop</a></li>
+                    <li><a href="weeks/week3/forloop.php">For Loop</a></li>
+                    <li><a href="weeks/week3/if.php">If Statement</a></li>
+                    <li><a href="weeks/week3/switch.php">Switch Exercise</a></li>
                 </ul>
                 <h3>Week 4:</h3>
                 <ul>
@@ -86,11 +90,20 @@
 
         <footer>
             <ul>
-                <li>Copyright &copy; 2021 - <?= date('Y') ?></li>
+                <li>Copyright &copy;
+                    <?php
+                    $date_current = date('Y');
+                    $date_created = 2021;
+                    if ($date_current == $date_created) {
+                        echo $date_current;
+                    } else {
+                        echo '' . $date_created . ' - ' . $date_current . '';
+                    }
+                    ?>
                 <li>All Rights Reserved</li>
                 <li><a href="https://ranovelli.github.io/portfolio-project" target="_blank">Novelli Design</a></li>
-                <li><a href="https://validator.w3.org/nu/?doc=https://novellidesign.org/scc/fall2021/it261/index.php" target="_blank">HTML</a></li>
-                <li><a href="http://jigsaw.w3.org/css-validator" target="_blank">CSS</a></li>
+                <li><a href="https://validator.w3.org/nu/?doc=https://novellidesign.org/it261/index.php" target="_blank">HTML</a></li>
+                <li><a href="https://jigsaw.w3.org/css-validator" target="_blank">CSS</a></li>
             </ul>
         </footer>
     </div> <!-- end wrapper -->
