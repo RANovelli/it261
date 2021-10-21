@@ -29,7 +29,7 @@ switch ($today) {
         $record = 'Thursday: April Silva "Under My Thumb"<br> Commonwealth Records, 1966';
         $pic = 'images/april.jpg';
         $alt = 'April Silva 45';
-        $content = 'Another tip of the hat to The Stones for Thurday. April Silva, Diplomacy Records\'s president Bill Silva’s daughter, recorded “Under My Thumb” backed up by The Brymers. This blistering version, replete with handclaps and a stomping beat, rivals, if not surpasses, the original with sheer force.';
+        $content = 'Another tip of the hat to The Stones for Thursday. April Silva, Diplomacy Records\' president Bill Silva’s daughter, recorded “Under My Thumb” backed up by The Brymers. This blistering version, replete with handclaps and a stomping beat, rivals, if not surpasses, the original with sheer force.';
         break;
 
     case 'Friday':

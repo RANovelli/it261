@@ -22,7 +22,7 @@
             <ul>
                 <li><a href="index.php">Home</a></li>
                 <li><a href="./website/daily.php">Switch</a></li>
-                <li><a href="">Troubleshoot</a></li>
+                <li><a href="repaired-adder.php">Troubleshoot</a></li>
                 <li><a href="">Calculator</a></li>
                 <li><a href="">Email</a></li>
                 <li><a href="">Gallery</a></li>
@@ -67,7 +67,11 @@
                 </ul>
                 <h3>Week 4:</h3>
                 <ul>
-                    <li>TBA</li>
+                    <li><a href="weeks/week4/celsius.php">Celsius Form</a></li>
+                    <li><a href="weeks/week4/form-arithmetic.php">Arithmetic Form</a></li>
+                    <li><a href="weeks/week4/form1.php">Form One</a></li>
+                    <li><a href="weeks/week4/form2.php">Form Two</a></li>
+                    <li><a href="weeks/week4/form3.php">Form Three</a></li>
                 </ul>
                 <h3>Week 5:</h3>
                 <ul>
