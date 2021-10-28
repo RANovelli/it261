@@ -75,7 +75,10 @@
                 </ul>
                 <h3>Week 5:</h3>
                 <ul>
-                    <li>TBA</li>
+                    <li><a href="weeks/week5/currency1.php">Currency 1  Basic Form</a></li>
+                    <li><a href="weeks/week5/currency2.php">Currency 2 Form with Drop-Down</a></li>
+                    <li><a href="weeks/week5/currency3.php">Currency 3 Sticky Form</a></li>
+                    <li><a href="weeks/week5/null.php">Null Exercise</a></li>
                 </ul>
                 <h3>Week 6:</h3>
                 <ul>
