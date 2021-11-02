@@ -96,7 +96,7 @@
             $gallon = $miles / $efficiency;
             $cost = $gallon * $amount;
             $total_hours = intval($miles) / $speed;
-            $days = $total_hours / $hours;
+            $days = $total_hours / intval($hours);
 
             echo '
             <div class="box">
