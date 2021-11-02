@@ -11,19 +11,23 @@
     <form action="
     <?php echo htmlspecialchars($_SERVER['PHP_SELF']) ;?>
     " method="post">
-    <fieldset>
+    <fieldset>      
+
         <label for="name">NAME</label>
-        <input type="text" name="name" value="
-        <?php if(isset($_POST['name'])) echo htmlspecialchars($_POST['name']); ;?>
+        <input type="text"  name="name" value="
+        <?php if(isset($_POST['name'])) echo htmlspecialchars($_POST['name']) ;?>
         ">
+        
         <label for="email">EMAIL</label>
         <input type="email" name="email" value="
-        <?php if(isset($_POST['email'])) echo htmlspecialchars($_POST['email']); ;?> 
-        ">
+        <?php if(isset($_POST['email'])) echo htmlspecialchars($_POST['email']); ?> 
+        ">        
+
         <label for="amount">How much money do you have?</label>
-        <input type="text" name="amount" value="
-        <?php if(isset($_POST['amount'])) echo htmlspecialchars($_POST['amount']); ;?>
-        ">
+        <input type="text"  name="amount" value="
+        <?php if(isset($_POST['amount'])) echo htmlspecialchars($_POST['amount']) ;   ?>
+        ">     
+      
         <label for="currency">Choose your currency</label>
         <ul>
         <li><input type="radio" name="currency" value="0.013"
@@ -110,13 +114,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
         $amount = $_POST['amount'];
         $currency = $_POST['currency'];
         $bank = $_POST['bank'];
-        $total = $amount * $currency;
-        $friendly_total = floor($total);
+        $total = intval($amount) * $currency;
 
         echo '
             <div class="box">
                 <h2>Hello, '.$name.'</h2>
-                <p>You now have $'.$friendly_total.' US dollars. It will be deposited in your <b>'.$bank.'</b> account and we will email you at <b>'.$email.'</b> within the next 24 hours.</p>
+                <p>You now have $'.floor($total).' US dollars. It will be deposited in your <b>'.$bank.'</b> account and we will email you at <b>'.$email.'</b> within the next 24 hours.</p>
             </div>
         ';
     } // close isset
