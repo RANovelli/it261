@@ -93,10 +93,13 @@
             $amount = $_POST['amount'];
             $efficiency = $_POST['efficiency'];
             $speed = 65;
-            $gallon = $miles / $efficiency;
+            $gallon = intval($miles) / $efficiency;
             $cost = $gallon * $amount;
             $total_hours = intval($miles) / $speed;
             $days = $total_hours / intval($hours);
+            if ($hours == 0) {
+                $hours = 1;
+            }
 
             echo '
             <div class="box">
