@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Currency 3 - Sticky Form</title>
+    <title>Extra Credit Currency Assignment</title>
     <link href="css/ecstyles.css" type="text/css" rel="stylesheet">
 </head>
 
