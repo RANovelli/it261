@@ -4,18 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <title>Currency 3 - Sticky Form</title>
-    <link href="css/styles.css" type="text/css" rel="stylesheet">
+    <link href="css/ecstyles.css" type="text/css" rel="stylesheet">
 </head>
 
 <body>
+    <header><h1>Extra Credit Currency Assignment</h1></header>
+    
     <form action="
     <?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>
     " method="post">
         <fieldset>
 
-            <label for="name">NAME</label>
+            <label for="name">Name</label>
             <input type="text" name="name" value="<?php if (isset($_POST['name'])) echo htmlspecialchars($_POST['name']); ?>">
-            <label for="email">EMAIL</label>
+            <label for="email">Email</label>
             <input type="email" name="email" value="<?php if (isset($_POST['email'])) echo htmlspecialchars($_POST['email']); ?> 
         ">
             <label for="amount">How much money do you have?</label>
@@ -29,7 +31,7 @@
                 <li><input type="radio" name="currency" value="0.0094" <?php if (isset($_POST['currency']) && $_POST['currency'] == '0.0094') echo 'checked="checked" '; ?>>Yen</li>
             </ul>
 
-            <label for="bank">Choose your banking institution</label>
+            <label for="bank">Banking Institution</label>
             <select name="bank">
                 <option value="" NULL <?php if (isset($_POST['bank']) && $_POST['bank'] == NULL) echo 'selected="unselected"'; ?>>Select one</option>
                 <option value="BOA" <?php if (isset($_POST['bank']) && $_POST['bank'] == 'BOA') echo 'selected="selected"'; ?>>Bank of America</option>
@@ -41,7 +43,7 @@
             </select>
 
             <input type="submit" value="Convert it!">
-            <p><a href="">Reset</a></p>
+            <p><a href="" class="button">Reset</a></p>
         </fieldset>
 
     </form>
@@ -52,24 +54,24 @@
 
         // if post fields are empty, we will call specific echoes
         if (empty($_POST['name'])) {
-            echo '<span class="error">Please fill out your name</span>';
+            echo '<span class="error"><em>Please fill out your name</em></span>';
         }
 
         if (empty($_POST['email'])) {
-            echo '<span class="error">Please fill out your email</span>';
+            echo '<span class="error"><em>Please fill out your email</em></span>';
         }
 
         if (empty($_POST['amount'])) {
-            echo '<span class="error">Please fill out your amount</span>';
+            echo '<span class="error"><em>Please fill out your amount</em></span>';
         }
 
         if (empty($_POST['currency'])) {
-            echo '<span class="error">Please choose your currency</span>';
+            echo '<span class="error"><em>Please choose your currency</span></em>';
         }
 
         // if post bank is null, please select your bank
         if ($_POST['bank'] == NULL) {
-            echo '<span class="error">Please choose your banking institution</span>';
+            echo '<span class="error"><em>Please choose your banking institution</em></span>';
         }
 
         if (isset(
@@ -86,16 +88,35 @@
             $bank = $_POST['bank'];
             $total = intval($amount) * $currency;
 
-            echo '
-            <div class="box">
-                <h2>Hello, ' . $name . '</h2>
-                <p>You now have $' . floor($total) . ' US dollars. It will be deposited in your <b>' . $bank . '</b> account and we will email you at <b>' . $email . '</b> within the next 24 hours.</p>
-            </div>
-        ';
+            if ($total >= 1000) {
+                echo '
+                <div class="box">
+                    <p>I\'m a happy camper, because I have $' . number_format($total, 2) . ' US dollars and I am going to ride a pony!!!</p>
+                    <iframe width="485" height="300" src="https://www.youtube.com/embed/ducdAc8PRCo" frameborder="0" allowfullscreen></iframe>
+
+                </div>
+                ';} else {
+                    echo '
+                <div class="box-2">
+                    <p>I\'m not happy, because I have $' . number_format($total, 2) . ' US dollars and it\'s raining in the city...</p>
+                    <iframe width="485" height="300" src="https://www.youtube.com/embed/WKm5txPO40w" frameborder="0" allowfullscreen></iframe>
+
+                </div>
+                ';
+            } // close if else
+
+
         } // close isset
 
     } // server request
     ?>
+
+    <footer>
+        <ul>
+            <li><a href="https://validator.w3.org/check?uri=referer">HTML VALID</a></li>
+            <li><a href="https://jigsaw.w3.org/css-validator/check?uri=referer">CSS VALID</a></li>
+        </ul>
+    </footer>
 </body>
 
 </html>
