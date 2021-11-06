@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Currency 3 - Sticky Form</title>
+    <title>Extra Credit Currency Assignment</title>
     <link href="css/ecstyles.css" type="text/css" rel="stylesheet">
 </head>
 
@@ -51,27 +51,33 @@
     <?php
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        $error_status = FALSE;
 
         // if post fields are empty, we will call specific echoes
         if (empty($_POST['name'])) {
             echo '<span class="error"><em>Please fill out your name</em></span>';
+            $error_status = TRUE;
         }
 
         if (empty($_POST['email'])) {
             echo '<span class="error"><em>Please fill out your email</em></span>';
+            $error_status = TRUE;
         }
 
         if (empty($_POST['amount'])) {
             echo '<span class="error"><em>Please fill out your amount</em></span>';
+            $error_status = TRUE;
         }
 
         if (empty($_POST['currency'])) {
             echo '<span class="error"><em>Please choose your currency</span></em>';
+            $error_status = TRUE;
         }
 
         // if post bank is null, please select your bank
         if ($_POST['bank'] == NULL) {
             echo '<span class="error"><em>Please choose your banking institution</em></span>';
+            $error_status = TRUE;
         }
 
         if (isset(
@@ -88,22 +94,22 @@
             $bank = $_POST['bank'];
             $total = intval($amount) * $currency;
 
-            if ($total >= 1000) {
+            if ($total >= 1000 && $error_status == FALSE) {
                 echo '
                 <div class="box">
                     <p>I\'m a happy camper, because I have $' . number_format($total, 2) . ' US dollars and I am going to ride a pony!!!</p>
                     <iframe width="485" height="300" src="https://www.youtube.com/embed/ducdAc8PRCo" frameborder="0" allowfullscreen></iframe>
 
                 </div>
-                ';} else {
+                ';} elseif ($total < 1000 && $error_status == FALSE) {
                     echo '
-                <div class="box-2">
-                    <p>I\'m not happy, because I have $' . number_format($total, 2) . ' US dollars and it\'s raining in the city...</p>
-                    <iframe width="485" height="300" src="https://www.youtube.com/embed/WKm5txPO40w" frameborder="0" allowfullscreen></iframe>
+                    <div class="box-2">
+                        <p>I\'m not happy, because I have $' . number_format($total, 2) . ' US dollars and it\'s raining in the city...</p>
+                        <iframe width="485" height="300" src="https://www.youtube.com/embed/WKm5txPO40w" frameborder="0" allowfullscreen></iframe>
 
-                </div>
-                ';
-            } // close if else
+                    </div>
+                    ';
+            } // close elseif
 
 
         } // close isset
