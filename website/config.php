@@ -152,3 +152,139 @@ switch ($today) {
 }
 
 // emailable form php
+$first_name = '';
+$last_name = '';
+$email = '';
+$gender = '';
+$wines = '';
+$regions = '';
+$comments = '';
+$privacy = '';
+$phone = '';
+
+$first_name_Err = '';
+$last_name_Err = '';
+$email_Err = '';
+$gender_Err = '';
+$wines_Err = '';
+$regions_Err = '';
+$comments_Err = '';
+$privacy_Err = '';
+$phone_Err = '';
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+    if (empty($_POST['first_name'])) {
+        $first_name_Err = 'Please fill out your first name';
+    } else {
+        $first_name = $_POST['first_name'];
+    }
+
+    if (empty($_POST['last_name'])) {
+        $last_name_Err = 'Please fill out your last name';
+    } else {
+        $last_name = $_POST['last_name'];
+    }
+
+    if (empty($_POST['email'])) {
+        $email_Err = 'Please enter your email';
+    } else {
+        $email = $_POST['email'];
+    }
+
+    if (empty($_POST['gender'])) {
+        $gender_Err = 'Please select your gender';
+    } else {
+        $gender = $_POST['gender'];
+    }
+
+    if (empty($_POST['wines'])) {
+        $wines_Err = 'Please choose your wines';
+    } else {
+        $wines = $_POST['wines'];
+    }
+
+    if ($_POST['regions'] == NULL) {
+        $regions_Err = 'Please select your region';
+    } else {
+        $regions = $_POST['regions'];
+    }
+
+    if (empty($_POST['comments'])) {
+        $comments_Err = 'Please share your comments with us';
+    } else {
+        $comments = $_POST['comments'];
+    }
+
+    if (empty($_POST['privacy'])) {
+        $privacy_Err = 'Please agree to our privacy statement';
+    } else {
+        $privacy = $_POST['privacy'];
+    }
+
+    if (empty($_POST['phone'])) {  // if empty, type in your number
+        $phone_Err = 'Please enter your phone number';
+    } elseif (array_key_exists('phone', $_POST)) {
+        if (!preg_match('/^[0-9]{3}-[0-9]{3}-[0-9]{4}$/', $_POST['phone'])) { // if you are not typing the requested format of xxx-xxx-xxxx, display Invalid format
+            $phone_Err = 'Invalid format!';
+        } else {
+            $phone = $_POST['phone'];
+        }
+    }
+
+    // the logic is if post wines is NOT empty, grab the wines and display them
+    function my_wines() {
+        $my_return = '';
+        if(!empty($_POST['wines'])) {
+            $my_return = implode(', ', $_POST['wines']);
+        }
+        return $my_return;
+    } // closes function
+
+    if(isset(
+        $_POST['first_name'],
+        $_POST['last_name'],
+        $_POST['email'],
+        $_POST['phone'],
+        $_POST['gender'],
+        $_POST['wines'],
+        $_POST['regions'],
+        $_POST['comments'],
+        $_POST['privacy']
+    )) {
+        $to = 'ryan.a.novelli@gmail.com';
+        $subject = 'Test Email,' .date('m/d/y');
+        $body = '
+        First name: '.$first_name.' '.PHP_EOL.'
+        Last name: '.$last_name.' '.PHP_EOL.'
+        Email: '.$email.' '.PHP_EOL.'
+        Phone: '.$phone.' '.PHP_EOL.'
+        Gender: '.$gender.' '.PHP_EOL.'
+        Wines: '.my_wines().' '.PHP_EOL.'
+        Region: '.$regions.' '.PHP_EOL.'
+        Comments: '.$comments.' '.PHP_EOL.'
+        ';
+
+        $headers = array(
+            'From' => 'no-reply@gmail.com',
+            'Reply-To' => ''.$email.''
+        );
+
+        mail($to, $subject, $body, $headers);
+        header('Location: thx.php');
+    }
+} // end if server request
+
+// random images
+
+$photos[0] = 'photo1';
+$photos[1] = 'photo2';
+$photos[2] = 'photo3';
+$photos[3] = 'photo4';
+$photos[4] = 'photo5';
+
+function random_pics($photos) {
+    $i = rand(0, 4);
+    $selected_image = ''. $photos[$i].'.jpg';
+    echo '<img src="images/'.$selected_image.'" alt="'.$photos[$i].'">';      
+}

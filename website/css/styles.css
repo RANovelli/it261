@@ -54,7 +54,6 @@ nav a {
 
 #hero {
     margin-bottom: 20px;
-    background: red;
 }
 
 /* values based on 940px grid, 580 divided by 940 */
@@ -68,6 +67,10 @@ aside {
     width: 36.17%;
     float: right;
     margin-bottom: 20px;
+}
+
+h1, h2, h3, p {
+    margin-bottom: 10px;
 }
 
 footer {
@@ -157,4 +160,49 @@ footer a:hover {
 /* Sun */
 .lightgreen {
     background: lightgreen;
+}
+
+/*------------------------- CONTACT ------------------------*/
+form {
+    margin: 20px auto;
+}
+
+form ul {
+    margin-left: 10px;
+    margin-bottom: 10px;
+    list-style-type: none;
+}
+
+fieldset {
+    padding: 10px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input {
+    margin-bottom: 10px;
+}
+
+input[type=radio], [type=checkbox] {
+    margin-right: 5px;
+}
+
+input[type=text], input[type=email] {
+    width: 95%;
+}
+
+textarea {
+    width: 95%;
+    height: 100px;
+}
+
+.error {
+    display: block;
+    color: red;
+    margin-bottom: 10px;
+    margin-top: 5px;
+    font-style: italic;
 }
