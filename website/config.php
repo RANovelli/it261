@@ -266,7 +266,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         ';
 
         $headers = array(
-            'From' => 'no-reply@gmail.com',
+            'From' => 'no-reply@novellidesign.org',
             'Reply-To' => ''.$email.''
         );
 
