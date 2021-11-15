@@ -7,8 +7,7 @@ include('includes/header.php'); ?>
     <main>
         <h1><?php echo $headline; ?></h1>
         <p>Aliquip sit in sint consequat cillum cupidatat anim cillum eu enim quis ipsum. Amet exercitation officia nostrud excepteur. Deserunt nostrud id id sunt labore Lorem ea tempor.Quis voluptate dolore adipisicing esse excepteur exercitation.</p>
-        <h2>Please tell us about your favorite music!</h2>
-        <?php include('includes/form.php'); ?>
+        <h2>Thank you for filling out the music form!</h2>
     </main>
 
     <aside>

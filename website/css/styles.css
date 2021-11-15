@@ -69,6 +69,12 @@ aside {
     margin-bottom: 20px;
 }
 
+.vinyl {
+    width: 400px;
+    border: 1.5px solid rgb(57, 6, 240);
+    padding: 1px;
+}
+
 h1, h2, h3, p {
     margin-bottom: 10px;
 }

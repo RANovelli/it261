@@ -59,6 +59,12 @@ switch (THIS_PAGE) {
         $body = 'gallery inner';
         $headline = 'Welcome to Ryan Novelli\'s IT 261 Website Gallery Page';
         break;
+    
+    case 'thx.php':
+        $title = 'Thank You Page of Ryan Novelli\'s IT 261 Website';
+        $body = 'thx inner';
+        $headline = 'Welcome to Ryan Novelli\'s IT 261 Website Thank You Page';
+        break;
 }
 
 //beginning of hw3 
@@ -156,8 +162,8 @@ $first_name = '';
 $last_name = '';
 $email = '';
 $gender = '';
-$wines = '';
-$regions = '';
+$genre = '';
+$format = '';
 $comments = '';
 $privacy = '';
 $phone = '';
@@ -166,13 +172,14 @@ $first_name_Err = '';
 $last_name_Err = '';
 $email_Err = '';
 $gender_Err = '';
-$wines_Err = '';
-$regions_Err = '';
+$genre_Err = '';
+$format_Err = '';
 $comments_Err = '';
 $privacy_Err = '';
 $phone_Err = '';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $error_status = FALSE;
 
     if (empty($_POST['first_name'])) {
         $first_name_Err = 'Please fill out your first name';
@@ -198,16 +205,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $gender = $_POST['gender'];
     }
 
-    if (empty($_POST['wines'])) {
-        $wines_Err = 'Please choose your wines';
+    if (empty($_POST['genre'])) {
+        $genre_Err = 'Please choose your genres';
     } else {
-        $wines = $_POST['wines'];
+        $genre = $_POST['genre'];
     }
 
-    if ($_POST['regions'] == NULL) {
-        $regions_Err = 'Please select your region';
+    if ($_POST['format'] == NULL) {
+        $format_Err = 'Please select your preferred format';
     } else {
-        $regions = $_POST['regions'];
+        $format = $_POST['format'];
     }
 
     if (empty($_POST['comments'])) {
@@ -227,16 +234,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } elseif (array_key_exists('phone', $_POST)) {
         if (!preg_match('/^[0-9]{3}-[0-9]{3}-[0-9]{4}$/', $_POST['phone'])) { // if you are not typing the requested format of xxx-xxx-xxxx, display Invalid format
             $phone_Err = 'Invalid format!';
+            $error_status = TRUE;
         } else {
             $phone = $_POST['phone'];
         }
     }
 
-    // the logic is if post wines is NOT empty, grab the wines and display them
-    function my_wines() {
+    // the logic is if post genre is NOT empty, grab the genre and display them
+    function my_genre() {
         $my_return = '';
-        if(!empty($_POST['wines'])) {
-            $my_return = implode(', ', $_POST['wines']);
+        if(!empty($_POST['genre'])) {
+            $my_return = implode(', ', $_POST['genre']);
         }
         return $my_return;
     } // closes function
@@ -247,12 +255,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $_POST['email'],
         $_POST['phone'],
         $_POST['gender'],
-        $_POST['wines'],
-        $_POST['regions'],
+        $_POST['genre'],
+        $_POST['format'],
         $_POST['comments'],
         $_POST['privacy']
-    )) {
-        $to = 'ryan.a.novelli@gmail.com';
+    ) && $error_status == FALSE) {
+        $to = 'szemeo@mystudentswa.com';
         $subject = 'Test Email,' .date('m/d/y');
         $body = '
         First name: '.$first_name.' '.PHP_EOL.'
@@ -260,13 +268,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         Email: '.$email.' '.PHP_EOL.'
         Phone: '.$phone.' '.PHP_EOL.'
         Gender: '.$gender.' '.PHP_EOL.'
-        Wines: '.my_wines().' '.PHP_EOL.'
-        Region: '.$regions.' '.PHP_EOL.'
+        Genres: '.my_genre().' '.PHP_EOL.'
+        Format: '.$format.' '.PHP_EOL.'
         Comments: '.$comments.' '.PHP_EOL.'
         ';
 
         $headers = array(
-            'From' => 'no-reply@gmail.com',
+            'From' => 'no-reply@novellidesign.org',
             'Reply-To' => ''.$email.''
         );
 

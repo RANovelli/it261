@@ -35,45 +35,46 @@
             <li>
                 <input type="radio" name="gender" value="other" <?php if (isset($_POST['gender']) && $_POST['gender'] == 'other') echo 'checked="checked"'; ?>>Other
             </li>
+            <li>
+                <input type="radio" name="gender" value="none" <?php if (isset($_POST['gender']) && $_POST['gender'] == 'none') echo 'checked="checked"'; ?>>Prefer not to say
+            </li>
         </ul>
         <span class="error">
             <?php echo $gender_Err; ?>
         </span>
 
-        <label for="wines">Favorite Wines</label>
+        <label for="genre">What kinds of music do you like?</label>
         <ul>
             <li>
-                <input type="checkbox" name="wines[]" value="cab" <?php if (isset($_POST['wines']) && in_array('cab', $wines)) echo 'checked="checked"'; ?>>Cabernet
+                <input type="checkbox" name="genre[]" value="psych" <?php if (isset($_POST['genre']) && in_array('psych', $genre)) echo 'checked="checked"'; ?>>Garage/Psych
             </li>
             <li>
-                <input type="checkbox" name="wines[]" value="merlot" <?php if (isset($_POST['wines']) && in_array('merlot', $wines)) echo 'checked="checked"'; ?>>Merlot
+                <input type="checkbox" name="genre[]" value="rap" <?php if (isset($_POST['genre']) && in_array('rap', $genre)) echo 'checked="checked"'; ?>>Hip-Hop
             </li>
             <li>
-                <input type="checkbox" name="wines[]" value="syrah" <?php if (isset($_POST['wines']) && in_array('syrah', $wines)) echo 'checked="checked"'; ?>>Syrah
+                <input type="checkbox" name="genre[]" value="soul" <?php if (isset($_POST['genre']) && in_array('soul', $genre)) echo 'checked="checked"'; ?>>Soul/R&B
             </li>
             <li>
-                <input type="checkbox" name="wines[]" value="malbec" <?php if (isset($_POST['wines']) && in_array('malbec', $wines)) echo 'checked="checked"'; ?>>Malbec
+                <input type="checkbox" name="genre[]" value="rock" <?php if (isset($_POST['genre']) && in_array('rock', $genre)) echo 'checked="checked"'; ?>>Rock & Roll 
             </li>
             <li>
-                <input type="checkbox" name="wines[]" value="blend" <?php if (isset($_POST['wines']) && in_array('blend', $wines)) echo 'checked="checked"'; ?>>Red Blend
+                <input type="checkbox" name="genre[]" value="other" <?php if (isset($_POST['genre']) && in_array('other', $genre)) echo 'checked="checked"'; ?>>Other (feel free to share in comments)
             </li>
         </ul>
         <span class="error">
-            <?php echo $wines_Err; ?>
+            <?php echo $genre_Err; ?>
         </span>
 
-        <label for="regions">Regions</label>
-        <select name="regions">
-            <option value="" NULL <?php if (isset($_POST['regions']) && $_POST['regions'] == NULL) echo 'selected="unselected"'; ?>>Select One</option>
-            <option value="nw" <?php if (isset($_POST['regions']) && $_POST['regions'] == 'nw') echo 'selected="selected"'; ?>>Northwest</option>
-            <option value="sw" <?php if (isset($_POST['regions']) && $_POST['regions'] == 'sw') echo 'selected="selected"'; ?>>Southwest</option>
-            <option value="mw" <?php if (isset($_POST['regions']) && $_POST['regions'] == 'mw') echo 'selected="selected"'; ?>>Midwest</option>
-            <option value="ne" <?php if (isset($_POST['regions']) && $_POST['regions'] == 'ne') echo 'selected="selected"'; ?>>Northeast</option>
-            <option value="se" <?php if (isset($_POST['regions']) && $_POST['regions'] == 'se') echo 'selected="selected"'; ?>>Southeast</option>
-            <option value="so" <?php if (isset($_POST['regions']) && $_POST['regions'] == 'so') echo 'selected="selected"'; ?>>South</option>
+        <label for="format">Preferred Format</label>
+        <select name="format">
+            <option value="" NULL <?php if (isset($_POST['format']) && $_POST['format'] == NULL) echo 'selected="unselected"'; ?>>Select One</option>
+            <option value="vinyl" <?php if (isset($_POST['format']) && $_POST['format'] == 'vinyl') echo 'selected="selected"'; ?>>Vinyl</option>
+            <option value="tape" <?php if (isset($_POST['format']) && $_POST['format'] == 'tape') echo 'selected="selected"'; ?>>Cassette</option>
+            <option value="cd" <?php if (isset($_POST['format']) && $_POST['format'] == 'cd') echo 'selected="selected"'; ?>>CD</option>
+            <option value="streaming" <?php if (isset($_POST['format']) && $_POST['format'] == 'streaming') echo 'selected="selected"'; ?>>Streaming</option>
         </select>
         <span class="error">
-            <?php echo $regions_Err; ?>
+            <?php echo $format_Err; ?>
         </span>
 
         <label for="comments">Comments</label>
