@@ -25,7 +25,7 @@
                 <li><a href="repaired-adder.php">Troubleshoot</a></li>
                 <li><a href="./weeks/week5/calculator.php">Calculator</a></li>
                 <li><a href="./website/contact.php">Email</a></li>
-                <li><a href="">Gallery</a></li>
+                <li><a href="./website/gallery.php">Gallery</a></li>
                 <li><a href="">Database</a></li>
             </ul>
         </nav>
@@ -95,7 +95,7 @@
                 </ul>
                 <h3>Week 8:</h3>
                 <ul>
-                    <li>TBA</li>
+                    <li><a href="weeks/week8/people.php">People Page Class Exercise</a></li>
                 </ul>
             </div>
         </aside>

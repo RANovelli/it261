@@ -1,13 +1,48 @@
 <?php
 include('config.php');
-include('includes/header.php'); ?>
-<div id="wrapper">
-    <div id="hero">
+include('includes/header.php');
+?>
 
-    </div> <!-- end hero -->
+<div id="wrapper">
+
     <main>
         <h1><?php echo $headline; ?></h1>
-        <p>Aliquip sit in sint consequat cillum cupidatat anim cillum eu enim quis ipsum. Amet exercitation officia nostrud excepteur. Deserunt nostrud id id sunt labore Lorem ea tempor.Quis voluptate dolore adipisicing esse excepteur exercitation. Minim nulla id incididunt deserunt Lorem id aute. Et nostrud dolor et in cupidatat do deserunt eiusmod.</p>
+        <h1 class="rnr">Rock & Rollers</h1>
+
+        <?php
+
+        $sql = 'SELECT * FROM rockers';
+
+        // connect to database using mysqli_connect() function
+
+        $iConn = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME)
+            or die(myError(__FILE__, __LINE__, mysqli_connect_error()));
+
+        // create variable $result
+
+        $result = mysqli_query($iConn, $sql)
+            or die(myError(__FILE__, __LINE__, mysqli_error($iConn)));
+
+        // if statement --- if more than 0 rows, all good
+
+        if (mysqli_num_rows($result) > 0) {
+            // while loop to return array
+            while ($row = mysqli_fetch_assoc($result)) {
+                echo '<table>';
+                echo '<td><img class="center" src="images/image' . $row['rockers_id'] . '.jpg" alt="' . $row['first_name'] . '"></td>';
+                echo '<td>' . $row['first_name'] . ' ' . $row['last_name'] . '</td>';
+                echo '<td>' . $row['band'] . '</td>';
+                echo '<td><img class="center" src="images/pic' . $row['rockers_id'] . '.jpg" alt="' . $row['first_name'] . '"></td>';
+                echo '</table>';
+            } // closing while
+        } else {
+            echo 'Houston, we have a problem!!';
+        }
+
+        mysqli_free_result($result);
+        mysqli_close($iConn);
+
+        ?>
     </main>
 
     <aside>
