@@ -25,17 +25,22 @@ include('includes/header.php');
 
         // if statement --- if more than 0 rows, all good
 
-        if (mysqli_num_rows($result) > 0) {
+        if (mysqli_num_rows($result) > 0)  { ?>
+        <table>
+            <?php
             // while loop to return array
             while ($row = mysqli_fetch_assoc($result)) {
-                echo '<table>';
+                echo '<tr>';
                 echo '<td><img class="center" src="images/image' . $row['rockers_id'] . '.jpg" alt="' . $row['first_name'] . '"></td>';
                 echo '<td>' . $row['first_name'] . ' ' . $row['last_name'] . '</td>';
                 echo '<td>' . $row['band'] . '</td>';
                 echo '<td><img class="center" src="images/pic' . $row['rockers_id'] . '.jpg" alt="' . $row['first_name'] . '"></td>';
-                echo '</table>';
+                echo '</tr>';
             } // closing while
-        } else {
+            ?>
+        </table>
+       <?php
+       } else {
             echo 'Houston, we have a problem!!';
         }
 
