@@ -7,42 +7,17 @@ include('includes/header.php');
 
     <main>
         <h1><?php echo $headline; ?></h1>
-        <h1 class="rnr">Rock & Rollers</h1>
-
-        <?php
-
-        $sql = 'SELECT * FROM rockers';
-
-        // connect to database using mysqli_connect() function
-
-        $iConn = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME)
-            or die(myError(__FILE__, __LINE__, mysqli_connect_error()));
-
-        // create variable $result
-
-        $result = mysqli_query($iConn, $sql)
-            or die(myError(__FILE__, __LINE__, mysqli_error($iConn)));
-
-        // if statement --- if more than 0 rows, all good
-
-        if (mysqli_num_rows($result) > 0) {
-            // while loop to return array
-            while ($row = mysqli_fetch_assoc($result)) {
-                echo '<table>';
-                echo '<td><img class="center" src="images/image' . $row['rockers_id'] . '.jpg" alt="' . $row['first_name'] . '"></td>';
-                echo '<td>' . $row['first_name'] . ' ' . $row['last_name'] . '</td>';
-                echo '<td>' . $row['band'] . '</td>';
-                echo '<td><img class="center" src="images/pic' . $row['rockers_id'] . '.jpg" alt="' . $row['first_name'] . '"></td>';
-                echo '</table>';
-            } // closing while
-        } else {
-            echo 'Houston, we have a problem!!';
-        }
-
-        mysqli_free_result($result);
-        mysqli_close($iConn);
-
-        ?>
+    
+        <table>
+            <?php foreach ($rocknroller as $name => $image) : ?>
+                <tr>
+                    <td><img src="images/<?php echo substr($image, 0, 5); ?>.jpg" alt="<?php echo str_replace('_', ' ', $name); ?>"></td>
+                    <td class="text"><?php echo str_replace('_', ' ', $name); ?></td>
+                    <td class="text"><?php echo substr($image, 6); ?></td>
+                    <td><img src="images/<?php echo substr($image, 0, 3); ?>.jpg" alt="<?php echo str_replace('_', ' ', $name); ?>"></td>
+                </tr>
+            <?php endforeach; ?>
+        </table>
     </main>
 
     <aside>

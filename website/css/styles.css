@@ -213,14 +213,14 @@ textarea {
     font-style: italic;
 }
 
-/*----------------------- GALLERY ---------------------------*/
+/*----------------------- GALLERY/DATABASE ---------------------------*/
 table {
-        border:1px solid #000;
-        width:90%;
-        border-collapse:collapse;
-        margin:auto;
-        background-color:#ffc000;
-    }
+    border:1px solid #000;
+    width:90%;
+    border-collapse:collapse;
+    margin:auto;
+    background-color:#ffc000;
+}
 
 td {
     border:1px dotted #000;
@@ -235,7 +235,23 @@ td {
 }
 
 .rnr {
-    margin-left: 240px;
+    margin-left: 235px;
     text-decoration: underline;
     color: crimson;
+}
+
+.description {
+    font-style: italic;
+    font-size: .9em;
+}
+
+.list {
+    margin-bottom: 10px;
+    list-style-type: none;
+}
+
+/*----------------------- ABOUT ---------------------------*/
+.adminer {
+    width: 600px;
+    border: 1px solid black;
 }

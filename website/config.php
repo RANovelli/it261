@@ -6,7 +6,7 @@ define('THIS_PAGE', basename($_SERVER['PHP_SELF']));
 $nav['index.php'] = 'Home';
 $nav['about.php'] = 'About';
 $nav['daily.php'] = 'Daily';
-$nav['project.php'] = 'Project';
+$nav['project.php'] = 'Rock & Rollers';
 $nav['contact.php'] = 'Contact';
 $nav['gallery.php'] = 'Gallery';
 
@@ -33,7 +33,7 @@ switch (THIS_PAGE) {
     case 'about.php':
         $title = 'About Page of Ryan Novelli\'s IT 261 Website';
         $body = 'about inner';
-        $headline = 'Welcome to Ryan Novelli\'s IT 261 Website About Page';
+        $headline = 'Ryan Novelli\'s IT 261 Website About Page';
         break;
 
     case 'daily.php':
@@ -43,27 +43,33 @@ switch (THIS_PAGE) {
         break;
 
     case 'project.php':
-        $title = 'Project Page of Ryan Novelli\'s IT 261 Website';
+        $title = 'Database Page of Ryan Novelli\'s IT 261 Website';
         $body = 'project inner';
-        $headline = 'Welcome to Ryan Novelli\'s IT 261 Website Project Page';
+        $headline = 'Ryan Novelli\'s IT 261 Website Rock & Roller Database';
+        break;
+
+    case 'project-view.php':
+        $title = 'Database Info Page of Ryan Novelli\'s IT 261 Website';
+        $body = 'project inner';
+        $headline = 'Ryan Novelli\'s IT 261 Website Rock & Roller Database Information Page';
         break;
 
     case 'contact.php':
         $title = 'Contact Page of Ryan Novelli\'s IT 261 Website';
         $body = 'contact inner';
-        $headline = 'Welcome to Ryan Novelli\'s IT 261 Website Contact Page';
+        $headline = 'Ryan Novelli\'s IT 261 Website Contact Page';
         break;
 
     case 'gallery.php':
         $title = 'Gallery Page of Ryan Novelli\'s IT 261 Website';
         $body = 'gallery inner';
-        $headline = 'Welcome to Ryan Novelli\'s IT 261 Website Gallery Page';
+        $headline = 'Ryan Novelli\'s IT 261 Website Rock & Roller Gallery';
         break;
     
     case 'thx.php':
         $title = 'Thank You Page of Ryan Novelli\'s IT 261 Website';
         $body = 'thx inner';
-        $headline = 'Welcome to Ryan Novelli\'s IT 261 Website Thank You Page';
+        $headline = 'Ryan Novelli\'s IT 261 Website Thank You Page';
         break;
 }
 
@@ -298,6 +304,13 @@ function random_pics($photos) {
 }
 
 // gallery page
+$rocknroller['Jimmy_Page'] = 'pagey_Guitar, Led Zeppelin.';
+$rocknroller['Liam_Gallagher'] = 'liamg_Singer, Oasis.';
+$rocknroller['Keith_Richards'] = 'keith_Guitar, Rolling Stones.';
+$rocknroller['Lemmy_Kilmister'] = 'lemmy_Bass, Motorhead.';
+$rocknroller['Iggy_Pop'] = 'iggyp_Singer, Stooges.';
+
+// database page
 ob_start();  // prevents header errors before reading the whole page!
 define('DEBUG', 'TRUE');  // We want to see our errors
 
