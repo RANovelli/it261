@@ -5,7 +5,7 @@ include('includes/header.php'); ?>
     
     <main>
         <h1><?php echo $headline; ?></h1>
-        <img class="adminer" src="images/adminer.PNG" alt="table image">
+        <a href="images/adminer.PNG"><img class="adminer" src="images/adminer.PNG" alt="table image"></a>
     </main>
 
     <aside>
