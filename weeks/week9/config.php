@@ -10,7 +10,7 @@ $last_name = '';
 $email = '';
 $username = '';
 $password = '';
-$success = 'You have successfully logged on';
+$success = 'You have successfully logged in';
 $errors = array();
 
 

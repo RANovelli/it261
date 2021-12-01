@@ -97,6 +97,10 @@
                 <ul>
                     <li><a href="weeks/week8/people.php">People Page Class Exercise</a></li>
                 </ul>
+                <h3>Week 9:</h3>
+                <ul>
+                    <li><a href="weeks/week9/register.php">Login/Register Page</a></li>
+                </ul>
             </div>
         </aside>
 
