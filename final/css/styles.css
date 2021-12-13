@@ -1,0 +1,314 @@
+/* styles for final project */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    background: lightblue;
+}
+
+header {
+    background: #ffc000;
+    overflow: hidden;
+
+}
+
+.header-inner {
+    max-width: 1100px;
+    margin: 20px auto;
+}
+
+#logo {
+    float: left;
+    width: 100px;
+    margin-bottom: 5px;
+    border: 1.5px solid brown;
+    border-radius: 50%;
+    padding: 1.5px;
+}
+
+#palm {
+    width: 600px;
+    margin-bottom: 5px;
+    border: 1.5px solid brown;
+    padding: 1.5px;
+}
+
+#snow {
+    width: 200px;
+    margin-left: 100px;
+    border: 1.5px solid brown;
+    border-radius: 50%;
+    padding: 1.5px;
+}
+
+.author {
+    text-align: center;
+}
+
+p.author {
+    font-size: 12px;
+}
+
+nav {
+    /* height: 50px; */
+    float: right;
+}
+
+nav ul {
+    float: right;
+}
+
+nav li {
+    float: left;
+    list-style-type: none;
+    margin-left: 30px;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+}
+
+.current {
+    color: red;
+    font-weight: bold;
+}
+
+#wrapper {
+    max-width: 1100px;
+    margin: 20px auto;
+    clear: both;
+}
+
+/* values based on 940px grid, 580 divided by 940 */
+main {
+    width: 61.70%;
+    float: left;
+    margin-bottom: 20px;
+}
+
+main.main {
+    width: 100%;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+aside {
+    width: 36.17%;
+    float: right;
+    margin-bottom: 20px;
+}
+
+h1, h2, h3, p {
+    margin-bottom: 10px;
+}
+
+footer {
+  height: 50px;
+  line-height: 50px;
+  clear: both;
+  text-align: center;
+}
+
+footer li {
+  list-style-type: none;
+  margin-left: 20px;
+  display: inline;
+}
+
+footer a {
+  text-decoration: none;
+  color: black;
+  transition: ease-in-out .2s;
+}
+
+footer a:hover {
+  color: red;  
+}
+
+/*------------------------- DAILY ------------------------*/
+.daily .headline {
+    padding-bottom: 15px;
+}
+.daily .record {
+    padding-bottom: 15px;
+}
+
+.daily .content {
+    padding-bottom: 50px;
+}
+
+.daily ul a {
+    text-decoration: none;
+    transition: ease-in-out .2s;
+}
+
+.daily ul a:hover {
+    text-decoration: none;
+    color: red;
+}
+
+.daily main ul a {
+    text-decoration: none;
+    color: black;
+}
+
+.daily li {
+    list-style-type: none;
+}
+
+/* Mon */
+.olive {
+    background: olive;
+}
+
+/* Tues */
+.sienna {
+    background: sienna;
+}
+
+/* Wed */
+.pink {
+    background: pink;
+}
+
+/* Thurs */
+.orange {
+    background: orange;
+}
+
+/* Fri */
+.mediumpurple {
+    background: mediumpurple;
+}
+
+/* Sat */
+.lightblue {
+    background: lightblue;
+}
+
+/* Sun */
+.lightgreen {
+    background: lightgreen;
+}
+
+/* ----------- login/success ----------------------*/
+.success {
+    float: left;
+    padding: 10px;
+    border: 1px solid brown;
+    margin: 10px;
+}
+
+.welcome-logout {
+    float: right;
+    padding: 10px;
+    border: 1px solid brown;
+    margin: 10px;
+}
+
+footer {
+    text-align: center;
+    margin: 140px 0;
+    list-style-type: none;
+}
+
+footer li {
+    display: inline;
+}
+
+footer a {
+  text-decoration: none;
+  color: black;
+  transition: ease-in-out .2s;
+}
+
+footer a:hover {
+  color: red;  
+}
+
+/*------------------------- CONTACT ------------------------*/
+form {
+    margin: 20px auto;
+}
+
+form ul {
+    margin-left: 10px;
+    margin-bottom: 10px;
+    list-style-type: none;
+}
+
+fieldset {
+    padding: 10px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input {
+    margin-bottom: 10px;
+}
+
+input[type=radio], [type=checkbox] {
+    margin-right: 5px;
+}
+
+input[type=text], input[type=email] {
+    width: 95%;
+}
+
+textarea {
+    width: 95%;
+    height: 100px;
+}
+
+.error {
+    display: block;
+    color: red;
+    margin-bottom: 10px;
+    margin-top: 5px;
+    font-style: italic;
+}
+
+/*----------------------- GALLERY/DATABASE ---------------------------*/
+table {
+    border:1px solid #000;
+    width:90%;
+    border-collapse:collapse;
+    margin:auto;
+    background-color:#ffc000;
+}
+
+td {
+    border:1px dotted #000;
+    padding:.5em;
+    text-align: center;
+}
+
+.center {
+    width: 200px;
+    display: block;
+    margin: 0 auto 20px auto;
+}
+
+.description {
+    font-style: italic;
+    font-size: .9em;
+}
+
+.list {
+    margin-bottom: 10px;
+    list-style-type: none;
+}
+
+/*----------------------- ABOUT ---------------------------*/
+.adminer {
+    width: 600px;
+    border: 1px solid black;
+}

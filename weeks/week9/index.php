@@ -37,7 +37,7 @@ if (isset($_SESSION['username'])) : ?>
             Hello <?php echo $_SESSION['username']; ?>
         </h3>
         <p><a href="index.php?logout='1'">Log out</a></p>
-    </div> !-- end welcome-logout div -->
+    </div> <!-- end welcome-logout div -->
 <?php endif; ?>
 
 </header>
