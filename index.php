@@ -41,7 +41,7 @@
 
         <aside>
             <img id="snow" src="images/profile_snow.jpg" alt="snow" />
-            <p>I'm a guitar player, songwriter, touring musician, record collector, and DJ, with a deep interest in all things Mid-Century. I'm currently in the process of getting my Italian passport with the goal of living between the Pacific Northwest and somewhere in the EU (most likely Italy), or perhaps the UK.</p>
+            <p>I'm a guitar player, songwriter, touring musician, record collector, and DJ, with a deep interest in all things Mid-Century. I'm a dual US/Italian citizen with the goal of living between the Pacific Northwest and somewhere in the EU (most likely Italy), or perhaps the UK.</p>
             <p>My primary goal for learning web development is to assist fellow artists, musicians, venues, and record labels in fulfilling IT-related requirements necessary to succeed in today's market, as well as having the ability to generate revenue independently from anywhere in the world.</p>
             <div class="weeks">
                 <h2>Weekly Exercises</h2>
@@ -100,6 +100,10 @@
                 <h3>Week 9:</h3>
                 <ul>
                     <li><a href="weeks/week9/register.php">Login/Register Page</a></li>
+                </ul>
+                <h3>Week 10:</h3>
+                <ul>
+                    <li><a href="final/register.php">Final Project Website</a></li>
                 </ul>
             </div>
         </aside>

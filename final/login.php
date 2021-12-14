@@ -3,7 +3,7 @@
 include('server.php');
 include('includes/header-form.php');
 ?>
-<div id="wrapper"></div>
+<div id="wrapper">
 <h1 class="center">Mid-Century Marvels Login</h1>
 <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
     <fieldset>

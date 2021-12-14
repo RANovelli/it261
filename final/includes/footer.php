@@ -18,7 +18,7 @@
         <li><a href="https://jigsaw.w3.org/css-validator/check?uri=referer">CSS</a></li>
     </ul>
 </footer>
-</div> <!-- end wrapper -->
+</div> <!--end wrapper -->
 </body>
 
 </html>

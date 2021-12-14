@@ -238,11 +238,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $era = $_POST['era'];
     }
 
-    if ($_POST['style'] == NULL) {
-        $style_Err = 'Please select your preferred style';
-    } else {
-        $style = $_POST['style'];
-    }
+    // if ($_POST['style'] == NULL) {
+    //     $style_Err = 'Please select your preferred style';
+    // } else {
+    //     $style = $_POST['style'];
+    // }
 
     if (empty($_POST['comments'])) {
         $comments_Err = 'Please share your comments with us';
@@ -287,7 +287,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $_POST['style'],
         $_POST['comments'],
         $_POST['privacy']
-    ) && $error_status == FALSE) {
+    ) && $error_status == FALSE) { 
+        $style = $_POST['style'];
         $to = 'szemeo@mystudentswa.com';
         $subject = 'Test Email,' . date('m/d/y');
         $body = '

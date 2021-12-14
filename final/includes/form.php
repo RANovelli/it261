@@ -64,7 +64,7 @@
 
         <label for="style">Preferred Style</label>
         <select name="style">
-            <option value="" NULL <?php if (isset($_POST['style']) && $_POST['style'] == NULL) echo 'selected="unselected"'; ?>>Select One</option>
+            <!-- <option value="" NULL <?php if (isset($_POST['style']) && $_POST['style'] == NULL) echo 'selected="unselected"'; ?>>Select One</option> -->
             <option value="mcm" <?php if (isset($_POST['style']) && $_POST['style'] == 'mcm') echo 'selected="selected"'; ?>>MCM</option>
             <option value="deco" <?php if (isset($_POST['style']) && $_POST['style'] == 'deco') echo 'selected="selected"'; ?>>Art Deco</option>
             <option value="gothic" <?php if (isset($_POST['style']) && $_POST['style'] == 'gothic') echo 'selected="selected"'; ?>>Gothic</option>
